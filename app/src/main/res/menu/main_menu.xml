@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/ActionAdd"
+        android:icon="@mipmap/ic_add_white_24dp"
+        android:title="Add"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/ActionSettings"
+        android:title="Settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ActionLogOut"
+        android:title="LogOut"
+        app:showAsAction="never" />
+    <!--<item android:id="@+id/btn_camera"-->
+        <!--android:title="Camera"-->
+        <!--app:showAsAction="always"/>-->
+
+    <!--<item android:id="@+id/btn_gallery"-->
+        <!--android:title="Gallery"-->
+        <!--app:showAsAction="always"/>-->
+
+</menu>
