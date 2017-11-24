@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -75,16 +76,23 @@ public class SetUpActivity extends AppCompatActivity {
             filepath.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Uri downloadUri = taskSnapshot.getDownloadUrl();
+                    String downloadUri = taskSnapshot.getDownloadUrl().toString();
                     mReference.child(user_id).child("username").setValue(name);
-                    mReference.child(user_id).child("image").setValue(downloadUri.toString());
+                    mReference.child(user_id).child("image").setValue(downloadUri);
                     mDialog.dismiss();
                     Intent intent = new Intent(SetUpActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
             });
+        } else {
+            Toast.makeText(getApplicationContext(),"anything is empty",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void onBackPressed() {
+        super.onBackPressed();
+        SetUpActivity.this.finish();
     }
 
     @Override

@@ -174,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent mainIntent = new Intent(MainActivity.this, SetUpActivity.class);
                     mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(mainIntent);
+                }else {
+
                 }
             }
 
